@@ -1,0 +1,26 @@
+[
+  {
+    "niveau": "vulgarisation",
+    "reference": "(à choisir)",
+    "lien": null,
+    "statut": "a_verifier"
+  },
+  {
+    "niveau": "intermediaire",
+    "reference": "(à choisir)",
+    "lien": null,
+    "statut": "a_verifier"
+  },
+  {
+    "niveau": "source",
+    "reference": "Horn, J. L. & Knapp, J. R. (1973). On the subjective character of the empirical base of Guilford's structure-of-intellect model. Psychological Bulletin, 80(1), 33-43.",
+    "lien": null,
+    "statut": "a_verifier"
+  },
+  {
+    "niveau": "source",
+    "reference": "Carroll, J. B. (1993). Human Cognitive Abilities: A Survey of Factor-Analytic Studies. Cambridge University Press.",
+    "lien": null,
+    "statut": "a_verifier"
+  }
+]

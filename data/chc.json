@@ -1,0 +1,122 @@
+[
+  {
+    "id": "g",
+    "niveau": "general",
+    "sigle": "g",
+    "libelle_courant": "Facteur général",
+    "definition": "L'idée qu'une capacité générale unique se retrouve derrière toutes les réussites intellectuelles.",
+    "parent": null,
+    "enfants": ["Gf", "Gc", "Gv", "Ga", "Gwm", "Gs", "Gr", "Gq", "Gl"],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gf",
+    "niveau": "large",
+    "sigle": "Gf",
+    "libelle_courant": "Raisonnement fluide",
+    "definition": "Résoudre un problème nouveau, sans connaissance préalable.",
+    "parent": "g",
+    "enfants": [],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gc",
+    "niveau": "large",
+    "sigle": "Gc",
+    "libelle_courant": "Connaissances cristallisées",
+    "definition": "Utiliser ce qu'on sait déjà : les mots, les savoirs, la culture.",
+    "parent": "g",
+    "enfants": [],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gv",
+    "niveau": "large",
+    "sigle": "Gv",
+    "libelle_courant": "Traitement visuel",
+    "definition": "Se représenter et manipuler des formes dans l'espace.",
+    "parent": "g",
+    "enfants": [],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Ga",
+    "niveau": "large",
+    "sigle": "Ga",
+    "libelle_courant": "Traitement auditif",
+    "definition": "Percevoir et distinguer des sons, y compris la parole.",
+    "parent": "g",
+    "enfants": [],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gwm",
+    "niveau": "large",
+    "sigle": "Gwm",
+    "libelle_courant": "Mémoire de travail",
+    "definition": "Retenir quelques éléments le temps de raisonner avec eux.",
+    "parent": "g",
+    "enfants": [],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gs",
+    "niveau": "large",
+    "sigle": "Gs",
+    "libelle_courant": "Vitesse de traitement",
+    "definition": "Traiter vite une information simple.",
+    "parent": "g",
+    "enfants": [],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gr",
+    "niveau": "large",
+    "sigle": "Gr",
+    "libelle_courant": "Récupération en mémoire",
+    "definition": "Retrouver vite des idées ou des informations en mémoire.",
+    "parent": "g",
+    "enfants": ["Gr-FI", "Gr-FO"],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gq",
+    "niveau": "large",
+    "sigle": "Gq",
+    "libelle_courant": "Connaissances quantitatives",
+    "definition": "Manier les nombres et les quantités.",
+    "parent": "g",
+    "enfants": [],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gl",
+    "niveau": "large",
+    "sigle": "Gl",
+    "libelle_courant": "Mémoire à long terme",
+    "definition": "Stocker durablement ce qui a été appris, et le retrouver.",
+    "parent": "g",
+    "enfants": [],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gr-FI",
+    "niveau": "etroit",
+    "sigle": "Gr-FI",
+    "libelle_courant": "Fluidité d'idées",
+    "definition": "Produire beaucoup d'idées dans une catégorie donnée.",
+    "parent": "Gr",
+    "enfants": [],
+    "statut": "a_verifier"
+  },
+  {
+    "id": "Gr-FO",
+    "niveau": "etroit",
+    "sigle": "Gr-FO",
+    "libelle_courant": "Flexibilité",
+    "definition": "Changer de catégorie, regarder la même chose autrement.",
+    "parent": "Gr",
+    "enfants": [],
+    "statut": "a_verifier"
+  }
+]

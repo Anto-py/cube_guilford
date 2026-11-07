@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Le cube de Guilford</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230d1617'/%3E%3Cpath d='M8 11l8-4 8 4-8 4z' fill='%23e3a535'/%3E%3Cpath d='M8 11v10l8 4V15z' fill='%23127676'/%3E%3Cpath d='M24 11v10l-8 4V15z' fill='%23e4632e'/%3E%3C/svg%3E"
+    />
+    <meta
+      name="description"
+      content="Visualisation en trois dimensions du cube de Guilford et du modèle CHC, pour des enseignants non spécialistes."
+    />
+    <link rel="stylesheet" href="./css/charte.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./vendor/three/three.module.min.js",
+          "three/addons/": "./vendor/three/addons/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="scene"></div>
+    <div id="etiquettes"></div>
+
+    <p id="chargement" class="chargement">Construction du cube…</p>
+
+    <section id="panne" class="panne" hidden>
+      <h2>La 3D n'est pas disponible</h2>
+      <p>
+        Ce navigateur ne peut pas afficher la scène 3D. Ouvrez la page dans un
+        Chrome, un Edge ou un Firefox récent.
+      </p>
+    </section>
+
+    <aside id="panneau" class="panneau">
+      <p id="compteur" class="panneau__compteur"></p>
+      <h1 id="titre" class="panneau__titre"></h1>
+      <div id="texte" class="panneau__texte"></div>
+      <div class="panneau__navigation">
+        <button type="button" id="precedent" class="commande commande--contour">
+          Précédent
+        </button>
+        <button type="button" id="suivant" class="commande commande--plein">
+          Suivant
+        </button>
+      </div>
+    </aside>
+
+    <div id="fonctions" class="fonctions" hidden>
+      <p class="fonctions__titre">Fonction suivie</p>
+      <div id="fonctions__liste" class="fonctions__liste"></div>
+    </div>
+
+    <div id="actions" class="actions" hidden>
+      <button type="button" id="nulle-part" class="commande commande--contour">
+        Nulle part
+      </button>
+      <button type="button" id="valider" class="commande commande--plein">
+        Valider
+      </button>
+    </div>
+
+    <nav id="frise" class="frise" aria-label="Versions du modèle" hidden></nav>
+
+    <div id="controles" class="controles">
+      <button type="button" data-controle="plus" aria-label="Zoomer">+</button>
+      <button type="button" data-controle="moins" aria-label="Dézoomer">−</button>
+      <button
+        type="button"
+        data-controle="recentrer"
+        class="controles__recentrer"
+      >
+        Recentrer
+      </button>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

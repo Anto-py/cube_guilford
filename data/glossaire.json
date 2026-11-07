@@ -1,0 +1,42 @@
+[
+  {
+    "terme": "opérations",
+    "definition": "Les manières dont l'esprit travaille sur une information.",
+    "exemple": "Se souvenir, comprendre, inventer, juger."
+  },
+  {
+    "terme": "contenus",
+    "definition": "Les types d'information sur lesquels porte le travail de l'esprit.",
+    "exemple": "Une image, un mot, une idée, un geste."
+  },
+  {
+    "terme": "produits",
+    "definition": "La forme du résultat obtenu.",
+    "exemple": "Un élément isolé, une classe, une relation, un système."
+  },
+  {
+    "terme": "production divergente",
+    "definition": "L'opération qui produit plusieurs réponses différentes à partir d'une même information.",
+    "exemple": "Trouver dix usages possibles d'une brique."
+  },
+  {
+    "terme": "aptitude large",
+    "definition": "Dans le CHC, un grand ensemble de capacités proches.",
+    "exemple": "Le raisonnement fluide."
+  },
+  {
+    "terme": "aptitudes étroites",
+    "definition": "Dans le CHC, les capacités précises rattachées à une aptitude large.",
+    "exemple": "Produire beaucoup d'idées, changer de catégorie."
+  },
+  {
+    "terme": "facteur g",
+    "definition": "L'idée qu'une capacité générale unique se retrouve derrière toutes les réussites intellectuelles.",
+    "exemple": "Celui qui réussit un test réussit souvent les autres."
+  },
+  {
+    "terme": "modèle hiérarchique",
+    "definition": "Un modèle où les capacités précises dépendent de capacités larges, elles-mêmes d'un facteur général.",
+    "exemple": "Des aptitudes étroites sous des aptitudes larges, sous g."
+  }
+]

@@ -1,0 +1,49 @@
+/*
+ * Jetons de la charte rétrofuturisme allégée.
+ * Les polices Anton, Oswald et Inter sont appelées par leur nom sans être
+ * embarquées : le rapatriement local dans assets/fonts/ est l'étape 6 du plan.
+ * Aucune requête réseau n'est faite tant qu'il n'est pas fait.
+ */
+:root {
+  --retro-teal: #127676;
+  --retro-orange: #e4632e;
+  --retro-jaune: #e3a535;
+  --retro-ink: #0d1617;
+  --retro-paper: #f2efe6;
+  --retro-teal-sombre: #0b4e4e;
+  --retro-danger-texte: #b8431a;
+
+  --police-titre: 'Anton', 'Oswald', Impact, sans-serif;
+  --police-ui: 'Oswald', 'Inter', system-ui, sans-serif;
+  --police-texte: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.6rem;
+
+  --scene-fond: #0d1617;
+  --case-neutre: #2b4443;
+  --case-arete: #3f5f5d;
+  --case-proposition: #e4632e;
+  --case-reponse: #e3a535;
+  --case-chc: #127676;
+  --case-survol: #f2efe6;
+
+  --ombre-haute: 0 18px 48px rgba(0, 0, 0, 0.45);
+  --focus-clair: 0 0 0 3px var(--retro-jaune);
+  --focus-sombre: 0 0 0 3px var(--retro-ink);
+
+  --duree-courte: 180ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duree-courte: 1ms;
+  }
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "creativite",
+    "libelle": "Créativité",
+    "consigne": "Où placeriez-vous la créativité, vous ?",
+    "guilford": { "type": "tranche", "axe": "operation", "valeur": "production_divergente" },
+    "chc": { "type": "noeuds", "noeuds": ["Gr", "Gr-FI", "Gr-FO"] },
+    "textes": {
+      "etape4": "Pour Guilford, créer, c'est produire beaucoup de réponses différentes à partir d'une même information. Il en fait une opération à part entière, la {{production divergente}}, qui traverse tous les contenus et tous les produits. La créativité n'est donc pas une faculté séparée : c'est une tranche du cube.",
+      "etape7": "Dans le modèle CHC, il n'existe pas d'aptitude appelée « créativité ». Ce qu'on désigne ainsi se retrouve dans les aptitudes de production d'idées, rattachées à la récupération en mémoire : trouver beaucoup d'idées, varier les catégories, changer d'angle.",
+      "etape8": "Le CHC sépare la fluidité, qui produit beaucoup, de la flexibilité, qui change de catégorie. La créativité y perd son unité : elle devient un ensemble d'{{aptitudes étroites}}."
+    },
+    "statut": "a_verifier"
+  },
+  {
+    "id": "memoire",
+    "libelle": "Mémoire",
+    "consigne": "Où placeriez-vous la mémoire, vous ?",
+    "guilford": { "type": "tranche", "axe": "operation", "valeur": "memoire" },
+    "chc": { "type": "noeuds", "noeuds": ["Gwm", "Gl"] },
+    "textes": {
+      "etape4": "Guilford en fait une opération : la mémoire. Elle couvre tout ce qui consiste à enregistrer puis à restituer une information, quel qu'en soit le contenu. À partir de 1988, il la dédouble en deux opérations, l'enregistrement et la rétention.",
+      "etape7": "Le CHC sépare la mémoire de travail, qui retient quelques éléments le temps de raisonner, de la mémoire à long terme, qui stocke durablement.",
+      "etape8": "Cette séparation est l'une des révisions qui montrent qu'un modèle se corrige."
+    },
+    "statut": "a_verifier"
+  },
+  {
+    "id": "raisonnement",
+    "libelle": "Raisonnement",
+    "consigne": "Où placeriez-vous le raisonnement, vous ?",
+    "guilford": { "type": "tranche", "axe": "operation", "valeur": "production_convergente", "rapprochement": true },
+    "chc": { "type": "noeuds", "noeuds": ["Gf"] },
+    "textes": {
+      "etape4": "Guilford ne range pas le raisonnement sous ce nom. On peut le rapprocher de la production convergente, qui consiste à trouver la bonne réponse à partir d'informations données. C'est un rapprochement, pas une définition de l'auteur.",
+      "etape7": "Le CHC lui donne une {{aptitude large}} dédiée, le raisonnement fluide : résoudre un problème nouveau, sans connaissance préalable.",
+      "etape8": "Le raisonnement fluide est au centre des discussions sur le facteur général : c'est l'aptitude qui s'en approche le plus."
+    },
+    "statut": "a_verifier"
+  },
+  {
+    "id": "pensee_critique",
+    "libelle": "Pensée critique",
+    "consigne": "Où placeriez-vous la pensée critique, vous ?",
+    "guilford": { "type": "tranche", "axe": "operation", "valeur": "evaluation", "rapprochement": true },
+    "chc": { "type": "diffuse", "noeuds": ["Gf", "Gc"] },
+    "textes": {
+      "etape4": "On peut rapprocher la pensée critique de l'évaluation, l'opération qui juge si une réponse est correcte. Mais Guilford ne parle pas de pensée critique : le mot vient d'un autre vocabulaire, celui de l'éducation.",
+      "etape7": "La pensée critique ne correspond à aucun nœud unique du CHC. Elle se répartit entre le raisonnement et les connaissances : juger suppose de savoir et de raisonner.",
+      "etape8": "C'est le cas le plus instructif : une notion scolaire utile ne se superpose pas exactement aux cartes des psychométriciens."
+    },
+    "statut": "a_verifier"
+  },
+  {
+    "id": "attention",
+    "libelle": "Attention",
+    "consigne": "Où placeriez-vous l'attention, vous ?",
+    "guilford": { "type": "nulle_part" },
+    "chc": { "type": "nulle_part", "noeuds": [] },
+    "textes": {
+      "etape4": "Guilford ne prévoit aucune opération dédiée à l'attention. Le cube décrit des produits de l'esprit, pas les conditions qui les rendent possibles.",
+      "etape7": "Le CHC ne lui donne pas non plus d'aptitude propre : l'attention est une condition de passation des tests, pas un facteur mesuré.",
+      "etape8": "Une notion indispensable en classe peut être absente des modèles de l'intelligence. Ce n'est pas un défaut du modèle, c'est son domaine."
+    },
+    "statut": "a_verifier"
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "vocabulaire": {
+    "operations": {
+      "cognition": { "code": "C", "libelle": "Cognition", "libelle_court": "Cognition" },
+      "memoire": { "code": "M", "libelle": "Mémoire", "libelle_court": "Mémoire" },
+      "memoire_enregistrement": { "code": "ME", "libelle": "Mémoire (enregistrement)", "libelle_court": "Enregistrer" },
+      "memoire_retention": { "code": "MR", "libelle": "Mémoire (rétention)", "libelle_court": "Restituer" },
+      "production_divergente": { "code": "D", "libelle": "Production divergente", "libelle_court": "Divergente" },
+      "production_convergente": { "code": "N", "libelle": "Production convergente", "libelle_court": "Convergente" },
+      "evaluation": { "code": "E", "libelle": "Évaluation", "libelle_court": "Évaluation" }
+    },
+    "contenus": {
+      "figural": { "code": "F", "libelle": "Figural" },
+      "visuel": { "code": "V", "libelle": "Visuel" },
+      "auditif": { "code": "A", "libelle": "Auditif" },
+      "symbolique": { "code": "S", "libelle": "Symbolique" },
+      "semantique": { "code": "M", "libelle": "Sémantique" },
+      "comportemental": { "code": "B", "libelle": "Comportemental" }
+    },
+    "produits": {
+      "unites": { "code": "U", "libelle": "Unités" },
+      "classes": { "code": "C", "libelle": "Classes" },
+      "relations": { "code": "R", "libelle": "Relations" },
+      "systemes": { "code": "S", "libelle": "Systèmes" },
+      "transformations": { "code": "T", "libelle": "Transformations" },
+      "implications": { "code": "I", "libelle": "Implications" }
+    }
+  },
+  "versions": [
+    {
+      "id": "1967",
+      "forme": "cube",
+      "cases": 120,
+      "operations": ["cognition", "memoire", "production_divergente", "production_convergente", "evaluation"],
+      "contenus": ["figural", "symbolique", "semantique", "comportemental"],
+      "produits": ["unites", "classes", "relations", "systemes", "transformations", "implications"],
+      "changement": null,
+      "texte": "Version de 1967 : cinq opérations, quatre contenus, six produits, soit 120 cases.",
+      "statut": "a_verifier"
+    },
+    {
+      "id": "1977",
+      "forme": "cube",
+      "cases": 150,
+      "operations": ["cognition", "memoire", "production_divergente", "production_convergente", "evaluation"],
+      "contenus": ["visuel", "auditif", "symbolique", "semantique", "comportemental"],
+      "produits": ["unites", "classes", "relations", "systemes", "transformations", "implications"],
+      "changement": "Le contenu figural se dédouble en visuel et auditif.",
+      "texte": "Version de 1977 : le figural se sépare en visuel et auditif, ce qui porte le cube à 150 cases.",
+      "statut": "a_verifier"
+    },
+    {
+      "id": "1988",
+      "forme": "cube",
+      "cases": 180,
+      "operations": ["cognition", "memoire_enregistrement", "memoire_retention", "production_divergente", "production_convergente", "evaluation"],
+      "contenus": ["visuel", "auditif", "symbolique", "semantique", "comportemental"],
+      "produits": ["unites", "classes", "relations", "systemes", "transformations", "implications"],
+      "changement": "L'opération mémoire se dédouble en enregistrement et rétention.",
+      "texte": "Version de 1988 : la mémoire se sépare en enregistrement et rétention, ce qui porte le cube à 180 cases.",
+      "statut": "a_verifier"
+    },
+    {
+      "id": "chc",
+      "forme": "arbre",
+      "cases": null,
+      "operations": [],
+      "contenus": [],
+      "produits": [],
+      "changement": "Le cube cède la place à un arbre hiérarchique.",
+      "texte": "Le modèle hiérarchique CHC organise les aptitudes en arbre : des aptitudes étroites sous des aptitudes larges, elles-mêmes sous un facteur général.",
+      "statut": "a_verifier"
+    }
+  ]
+}

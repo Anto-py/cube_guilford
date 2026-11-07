@@ -1,0 +1,138 @@
+[
+  {
+    "id": 0,
+    "slug": "accueil",
+    "titre": "Le cube de Guilford",
+    "camera": { "position": [9, 8, 13], "cible": [0, 0, 0] },
+    "texte": [
+      "En 1967, le psychologue Joy Paul Guilford propose de ranger toutes les formes de l'intelligence dans un cube.",
+      "Chaque case est une aptitude : une manière de faire, appliquée à un type de contenu, produisant une forme de résultat.",
+      "Tournez le cube, puis avancez étape par étape. Vous pourrez revenir en arrière à tout moment.",
+      "Souris : glisser pour tourner, molette pour zoomer. Clavier : flèches gauche et droite."
+    ],
+    "vue": "cube",
+    "frise_visible": false,
+    "version": "1967"
+  },
+  {
+    "id": 1,
+    "slug": "dimensions",
+    "titre": "Trois questions, trois axes",
+    "camera": { "position": [8, 7, 12], "cible": [0, 0, 0] },
+    "texte": [
+      "Une face du cube répond à une question.",
+      "Ce que fait l'esprit : les {{opérations}}. Sur quoi il travaille : les {{contenus}}. La forme du résultat : les {{produits}}.",
+      "Guilford croise les trois. Chaque croisement est une aptitude."
+    ],
+    "vue": "cube",
+    "frise_visible": false,
+    "version": "1967"
+  },
+  {
+    "id": 2,
+    "slug": "une-case",
+    "titre": "Une case, trois réponses",
+    "camera": { "position": [7, 5, 10], "cible": [0, 0, 0] },
+    "texte": [
+      "Une case réunit une opération, un contenu et un produit.",
+      "Guilford associe à chaque case une tâche de test qui la mesure.",
+      "Cliquez sur une case pour voir ce qu'elle contient."
+    ],
+    "vue": "cube",
+    "frise_visible": false,
+    "version": "1967"
+  },
+  {
+    "id": 3,
+    "slug": "proposition",
+    "titre": "Où placeriez-vous cette fonction ?",
+    "camera": { "position": [8, 6, 11], "cible": [0, 0, 0] },
+    "texte": [
+      "Choisissez une fonction, puis montrez où vous la placeriez dans le cube.",
+      "Cliquez sur une case, ou sur une étiquette d'axe pour désigner toute une tranche."
+    ],
+    "vue": "cube",
+    "frise_visible": false,
+    "version": "1967"
+  },
+  {
+    "id": 4,
+    "slug": "reponse-guilford",
+    "titre": "La réponse de Guilford",
+    "camera": { "position": [7, 5, 9], "cible": [0, 0, 0] },
+    "texte": [
+      "Voici où Guilford place cette fonction. Ce n'est pas un corrigé : c'est une proposition, parmi d'autres possibles."
+    ],
+    "vue": "cube",
+    "frise_visible": false,
+    "version": "1967"
+  },
+  {
+    "id": 5,
+    "slug": "critique",
+    "titre": "Un beau modèle n'est pas une preuve",
+    "camera": { "position": [9, 4, 9], "cible": [0, 0, 0] },
+    "texte": [
+      "En 1973, John Horn et John Knapp contestent la base empirique du modèle : les résultats des tests ne soutiendraient pas la structure en cube.",
+      "Les cases ne se regroupent pas comme le modèle l'annonce.",
+      "Un modèle élégant n'est pas forcément vrai. Le cube reste utile pour penser, à condition de ne pas le prendre pour la carte du cerveau."
+    ],
+    "vue": "cube",
+    "frise_visible": false,
+    "version": "1967"
+  },
+  {
+    "id": 6,
+    "slug": "frise",
+    "titre": "Le modèle a bougé",
+    "camera": { "position": [10, 6, 12], "cible": [0, 0, 0] },
+    "texte": [
+      "Guilford a révisé son cube : 120 cases en 1967, 150 en 1977, 180 en 1988.",
+      "À chaque fois, une dimension se dédouble et de nouvelles cases apparaissent.",
+      "Utilisez la frise en haut de l'écran pour changer de version."
+    ],
+    "vue": "cube",
+    "frise_visible": true,
+    "version": "1967"
+  },
+  {
+    "id": 7,
+    "slug": "vers-chc",
+    "titre": "Une autre carte",
+    "camera": { "position": [7.5, 5.5, 10], "cible": [0, 1, 0] },
+    "texte": [
+      "Après Guilford, les chercheurs ont cherché une organisation plus fidèle aux résultats des tests.",
+      "Le {{modèle hiérarchique}} CHC en est la version la plus répandue dans la littérature psychométrique.",
+      "Le cube se dissout, l'arbre pousse : ce ne sont pas les mêmes briques."
+    ],
+    "vue": "arbre",
+    "frise_visible": true,
+    "version": "chc"
+  },
+  {
+    "id": 8,
+    "slug": "chc-carte",
+    "titre": "Cette carte aussi est datée",
+    "camera": { "position": [6.5, 5, 9], "cible": [0, 1, 0] },
+    "texte": [
+      "Le {{facteur g}}, au sommet, est discuté : certains chercheurs le lisent comme un artefact de la méthode.",
+      "Le modèle a été révisé plusieurs fois depuis sa forme la plus connue.",
+      "Une carte n'est pas le territoire."
+    ],
+    "vue": "arbre",
+    "frise_visible": true,
+    "version": "chc"
+  },
+  {
+    "id": 9,
+    "slug": "ouverture",
+    "titre": "Continuer seul",
+    "camera": { "position": [7.5, 5.5, 10], "cible": [0, 1, 0] },
+    "texte": [
+      "Quelques lectures, du plus accessible au plus savant, pour aller plus loin."
+    ],
+    "vue": "arbre",
+    "frise_visible": true,
+    "version": "chc"
+  }
+]

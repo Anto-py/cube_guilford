@@ -1,0 +1,13 @@
+[
+  {
+    "id": "DMU",
+    "operation": "production_divergente",
+    "contenu": "semantique",
+    "produit": "unites",
+    "versions": ["1967", "1977", "1988"],
+    "libelle_courant": "Trouver beaucoup d'idées à partir du sens des mots",
+    "exemple": "Cite en une minute tous les usages possibles d'une brique.",
+    "source": "Guilford (1967)",
+    "statut": "a_verifier"
+  }
+]
