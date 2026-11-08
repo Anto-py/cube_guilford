@@ -49,7 +49,7 @@
     "camera": { "position": [8, 6, 11], "cible": [0, 0, 0] },
     "texte": [
       "Choisissez une fonction, puis montrez où vous la placeriez dans le cube.",
-      "Cliquez sur une case, ou sur une étiquette d'axe pour désigner toute une tranche."
+      "Cliquez sur une case, ou sur une valeur de la légende pour désigner toute une tranche."
     ],
     "vue": "cube",
     "frise_visible": false,

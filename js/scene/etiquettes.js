@@ -1,118 +1,67 @@
 import * as THREE from 'three';
-import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
-
-const PAS = 1;
 
 /**
- * Étiquettes d'axes, en HTML positionné en 3D. Un clic sur une étiquette
- * désigne toute la tranche qu'elle nomme (étape 3).
+ * Repères des trois axes.
+ *
+ * Ils sont posés à des places fixes autour de la scène, donc ils ne peuvent
+ * ni se chevaucher ni passer derrière le cube. La flèche de chacun indique la
+ * direction réelle de son axe à l'écran, recalculée à chaque mouvement : c'est
+ * elle qui porte l'information, la position ne fait que répartir les trois.
+ *
+ * Un cercle remplace la flèche quand l'axe pointe vers la caméra : dans ce cas
+ * les valeurs se superposent en profondeur et aucune direction n'est lisible.
  */
-export function creerEtiquettes(groupeParent, surTranche) {
-  const groupe = new THREE.Group();
-  groupeParent.add(groupe);
+export function creerEtiquettes(conteneur, camera) {
+  const axes = [
+    { titre: 'Opérations', classe: 'repere--operations', vecteur: new THREE.Vector3(1, 0, 0) },
+    { titre: 'Produits', classe: 'repere--produits', vecteur: new THREE.Vector3(0, 1, 0) },
+    { titre: 'Contenus', classe: 'repere--contenus', vecteur: new THREE.Vector3(0, 0, 1) },
+  ];
 
-  const objets = [];
-  let clicActif = false;
+  const reperes = axes.map(({ titre, classe, vecteur }) => {
+    const element = document.createElement('div');
+    element.className = `repere ${classe}`;
 
-  function vider() {
-    objets.forEach((objet) => {
-      groupe.remove(objet);
-      objet.element.remove();
-    });
-    objets.length = 0;
-  }
+    const texte = document.createElement('span');
+    texte.className = 'repere__titre';
+    texte.textContent = titre;
 
-  function ajouter(texte, axe, valeur, position) {
-    const element = document.createElement('button');
-    element.type = 'button';
-    element.className = 'etiquette';
-    element.textContent = texte;
-    element.dataset.axe = axe;
-    element.dataset.valeur = valeur;
-    element.addEventListener('click', () => {
-      if (!clicActif) return;
-      surTranche({ axe, valeur });
-    });
+    const fleche = document.createElement('span');
+    fleche.className = 'repere__fleche';
+    fleche.textContent = '→';
 
-    const objet = new CSS2DObject(element);
-    objet.position.copy(position);
-    groupe.add(objet);
-    objets.push(objet);
-    return element;
-  }
+    element.append(texte, fleche);
+    conteneur.appendChild(element);
 
-  function ajouterLegende(texte, position) {
-    const element = document.createElement('span');
-    element.className = 'etiquette-legende';
-    element.textContent = texte;
-    const objet = new CSS2DObject(element);
-    objet.position.copy(position);
-    groupe.add(objet);
-    objets.push(objet);
-  }
+    return { element, fleche, vecteur };
+  });
 
-  function construire(version, vocabulaire) {
-    vider();
+  const origine = new THREE.Vector3();
 
-    const nx = version.operations.length;
-    const ny = version.produits.length;
-    const nz = version.contenus.length;
-    const xMin = -((nx - 1) / 2) * PAS;
-    const xMax = ((nx - 1) / 2) * PAS;
-    const yMin = -((ny - 1) / 2) * PAS;
-    const zMax = ((nz - 1) / 2) * PAS;
-    const zDevant = zMax + 1.1;
+  function mettreAJour() {
+    origine.set(0, 0, 0).project(camera);
 
-    /* Opérations : rangée sous le cube, décalée en quinconce pour que les
-     * libellés courts ne se chevauchent pas en projection. */
-    version.operations.forEach((valeur, i) => {
-      ajouter(
-        vocabulaire.operations[valeur].libelle_court ?? vocabulaire.operations[valeur].libelle,
-        'operation',
-        valeur,
-        new THREE.Vector3(xMin + i * PAS, yMin - 0.95 - (i % 2) * 0.95, zDevant)
-      );
-    });
+    for (const { fleche, vecteur } of reperes) {
+      const bout = vecteur.clone().project(camera);
+      const dx = (bout.x - origine.x) * window.innerWidth * 0.5;
+      const dy = -(bout.y - origine.y) * window.innerHeight * 0.5;
 
-    /* Produits : colonne de gauche, dans l'ordre vertical du cube. */
-    ajouterLegende('Produits', new THREE.Vector3(xMin - 1.25, 3.1, zDevant));
-    version.produits.forEach((valeur, j) => {
-      ajouter(
-        vocabulaire.produits[valeur].libelle,
-        'produit',
-        valeur,
-        new THREE.Vector3(xMin - 1.25, yMin + j * PAS, zDevant)
-      );
-    });
+      if (Math.hypot(dx, dy) < 8) {
+        fleche.textContent = '◎';
+        fleche.style.transform = 'none';
+        continue;
+      }
 
-    /* Contenus : colonne de droite, à mi-profondeur pour ne pas glisser
-     * sur la face avant du cube. */
-    ajouterLegende('Contenus', new THREE.Vector3(xMax + 2.8, 2.4, 0));
-    version.contenus.forEach((valeur, k) => {
-      ajouter(
-        vocabulaire.contenus[valeur].libelle,
-        'contenu',
-        valeur,
-        new THREE.Vector3(xMax + 2.8, -2.1 + k * 1.05, 0)
-      );
-    });
+      fleche.textContent = '→';
+      const angle = (Math.atan2(dy, dx) * 180) / Math.PI;
+      fleche.style.transform = `rotate(${angle}deg)`;
+    }
   }
 
   return {
-    groupe,
-    construire,
-    rendreCliquables(actif) {
-      clicActif = actif;
-      objets.forEach((objet) => {
-        objet.element.classList.toggle('etiquette--inerte', !actif);
-      });
-    },
-    definirVisible(visible) {      groupe.visible = visible;
-      /* CSS2DRenderer ignore la visibilité des parents : chaque étiquette
-       * doit porter la sienne, sinon elle reste affichée sur l'arbre. */
-      objets.forEach((objet) => {
-        objet.visible = visible;
-      });
+    mettreAJour,
+    definirVisible(visible) {
+      conteneur.hidden = !visible;
     },
   };
 }

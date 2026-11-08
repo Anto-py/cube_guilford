@@ -11,6 +11,7 @@ import { animer } from './scene/transitions.js';
 import { creerPanneau } from './ui/panneau.js';
 import { creerFonctions } from './ui/fonctions.js';
 import { creerFrise } from './ui/frise.js';
+import { creerLegende } from './ui/legende.js';
 import { creerBulle } from './ui/bulle.js';
 import { creerGlossaire } from './ui/glossaire.js';
 import { creerControles } from './ui/controles.js';
@@ -56,9 +57,16 @@ async function demarrer() {
 
   arbre.construire(donnees.chc);
 
-  const etiquettes = creerEtiquettes(scene3d.scene, (tranche) => {
-    proposerTranche(tranche);
-  });
+  const etiquettes = creerEtiquettes(
+    document.getElementById('reperes'),
+    scene3d.camera
+  );
+
+  /* Les repères d'axes suivent le point de vue : leur flèche se recalcule à
+   * chaque mouvement de la caméra, sinon elle indique une fausse direction. */
+  scene3d.controles.addEventListener('change', () => etiquettes.mettreAJour());
+  window.addEventListener('resize', () => etiquettes.mettreAJour());
+  etiquettes.mettreAJour();
 
   const glossaire = creerGlossaire(donnees, document.getElementById('texte'));
   const panneau = creerPanneau(
@@ -68,6 +76,7 @@ async function demarrer() {
   );
   const fonctions = creerFonctions(donnees, { choisirFonction });
   const frise = creerFrise(donnees, { changerVersion });
+  const legende = creerLegende(donnees, { proposerTranche });
 
   creerControles({ zoomer, recentrer: recadrer });
 
@@ -266,7 +275,6 @@ async function demarrer() {
     if (!enArbre && cube.version !== etat.version) {
       const version = donnees.versionsParId.get(etat.version);
       cube.construire(version, donnees.vocabulaire);
-      etiquettes.construire(version, donnees.vocabulaire);
 
       const depart = cube.groupe.scale.x;
       animer({
@@ -303,11 +311,10 @@ async function demarrer() {
       });
     }
 
-    etiquettes.rendreCliquables(etat.mode === 'parcours' && etat.etape === 3);
-
     panneau.rendre(etat);
     fonctions.rendre(etat);
     frise.rendre(etat);
+    legende.rendre(etat);
 
     const enProposition = etat.mode === 'parcours' && etat.etape === 3;
     const barreActions = document.getElementById('actions');

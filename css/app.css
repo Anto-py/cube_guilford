@@ -124,6 +124,122 @@ body {
   margin-bottom: 0;
 }
 
+/* ---------- Repères des axes ---------- */
+
+.reperes {
+  position: fixed;
+  inset: 0 430px 0 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.repere {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--police-ui);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(242, 239, 230, 0.55);
+  white-space: nowrap;
+}
+
+.repere--operations {
+  right: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.repere--produits {
+  left: 50%;
+  top: 26px;
+  transform: translateX(-50%);
+}
+
+.repere--contenus {
+  left: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.repere__fleche {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+  color: rgba(227, 165, 53, 0.9);
+  transform-origin: 50% 50%;
+}
+
+/* ---------- Légende des axes ---------- */
+
+.legende {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(13, 22, 23, 0.14);
+}
+
+.legende__groupe {
+  margin-bottom: 12px;
+}
+
+.legende__groupe:last-child {
+  margin-bottom: 0;
+}
+
+.legende__titre {
+  margin: 0 0 6px;
+  font-family: var(--police-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--retro-teal-sombre);
+}
+
+.legende__valeurs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.legende__valeur {
+  padding: 3px 10px;
+  border: 1px solid rgba(13, 22, 23, 0.2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--retro-ink);
+  font-family: var(--police-ui);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  cursor: default;
+}
+
+.legende__valeur:disabled {
+  opacity: 1;
+  color: var(--retro-ink);
+}
+
+.legende__valeur:not(:disabled) {
+  cursor: pointer;
+}
+
+.legende__valeur:not(:disabled):hover {
+  border-color: var(--retro-orange);
+}
+
+.legende__valeur.est-active {
+  background: var(--retro-orange);
+  border-color: var(--retro-orange);
+  color: var(--retro-paper);
+}
+
+.legende__valeur:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-sombre);
+}
+
 .panneau__navigation {
   display: flex;
   gap: 10px;
@@ -500,6 +616,10 @@ body {
 /* ---------- Écrans étroits ---------- */
 
 @media (max-width: 780px) {
+  .reperes {
+    inset: 0 0 44vh 0;
+  }
+
   .panneau {
     top: auto;
     left: 0;
